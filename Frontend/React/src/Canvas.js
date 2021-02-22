@@ -97,7 +97,7 @@ class Canvas extends React.Component {
             formData.append(`y[${i}]`, yCalculated * this.props.r[i]);
             formData.append(`r[${i}]`, this.props.r[i]);
         }
-        //could not to work properly
+
         this.props.FormPostFetch(formData);
     };
 

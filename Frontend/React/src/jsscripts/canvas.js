@@ -34,7 +34,6 @@ function drawPoint(x, y, hit) {
   }
   context.fillStyle = color;
   context.fill();
-  //context.stroke();
 }
 
 //onClick canvas
