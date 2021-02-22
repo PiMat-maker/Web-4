@@ -27,7 +27,6 @@ public class FormManager {
     public Response addPoint(@PathParam("username") String username, @Context HttpServletRequest request, @Context HttpServletResponse response, Map<String, Double> params) {
 
         List<FormBean> res = null;
-        //System.out.println(params.size());
         try {
             for (int i = 0; i < params.size()/3; ++i) {
                 double x = params.get("x[" + i + "]");

@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.css";
-//import { useSelector, useDispatch } from "react-redux";
 import { FormPostFetch } from "./redux/actions/FormFetch";
 import { setAnswer } from "./redux/reducers/formReducer";
 import { withRouter } from "react-router-dom";
@@ -102,22 +101,8 @@ class Canvas extends React.Component {
         this.props.FormPostFetch(formData);
     };
 
-    /*
-    function createGraphic() {
-      console.log("Drawing graphic...");
-      for (let elem of arrayPoint) {
-        drawPoint(...elem);
-      }
-    }
-    */
-
     drawPoint = (x, y, r, hit) => {
         console.log("Marking point " + x + ", " + y + ", " + r + ", " + hit);
-        //let point = document.getElementById("target-dot");
-        //let newpoint = document.createElement("circle");
-        //newpoint.setAttribute("r", "3");
-        //newpoint.setAttribute("cx", x/1.5 * 150 + 195.6);
-        //newpoint.setAttribute("cy", -y/1.5 * 150 + 195.6);
         let color = "red";
         if (hit === "true") {
             color = "lime";
@@ -125,8 +110,6 @@ class Canvas extends React.Component {
         if (hit === "none") {
             color = "grey";
         }
-        //newpoint.setAttribute("fill", color);
-        //point.parentNode.insertBefore(newpoint, point.nextSibling);
         const canvas = document.getElementById("canvas");
         const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -136,8 +119,6 @@ class Canvas extends React.Component {
         circle.setAttribute("fill", color);
         g.appendChild(circle);
         canvas.appendChild(g);
-
-        //context.stroke();
     }
 
 

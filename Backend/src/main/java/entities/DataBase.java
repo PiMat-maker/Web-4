@@ -4,7 +4,6 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -41,35 +40,16 @@ public class DataBase implements Serializable {
         formBean.setWorkTime(System.currentTimeMillis() - formBean.getWorkTime());
         SimpleDateFormat sDFormat = new SimpleDateFormat("HH:mm:ss");
         formBean.setCurrentTime(sDFormat.format(Calendar.getInstance().getTime()));
-        //try {
-            //userTransaction.begin();
-            entityManager.persist(formBean);
-            //userTransaction.commit();
-        //}catch (Exception e){
-        //    System.out.println("UserTransaction Failed save data");
-        //}
+        entityManager.persist(formBean);
     }
 
     public List<FormBean> getList(String username){
-        //try {
-        //    userTransaction.begin();
-
-        //    userTransaction.commit();
-        //}catch (Exception e){
-        //    System.out.println("UserTransaction Failed save data");
-        //}
         return new ArrayList<>((entityManager.createQuery("select res from FormBean res where res.user.username = :username", FormBean.class))
                 .setParameter("username", username).getResultList());
     }
 
     public void clear(String username){
-        //try {
-        //    userTransaction.begin();
-            entityManager.createQuery("delete from User res where res.username like :username").setParameter("username", username);
-        //    userTransaction.commit();
-        //}catch (Exception e){
-        //    System.out.println("UserTransaction Failed clear");
-        //}
+        entityManager.createQuery("delete from User res where res.username like :username").setParameter("username", username);
     }
 
     public void addPoint(String username){
@@ -78,26 +58,12 @@ public class DataBase implements Serializable {
 
     public void setUser(String username, String password, String token) {
         User user = new User(username, password, token);
-        //try {
-        //    userTransaction.begin();
-            entityManager.persist(user);
-        //    userTransaction.commit();
-        //}catch (Exception e){
-        //    System.out.println("UserTransaction Failed save user");
-        //}
+        entityManager.persist(user);
     }
 
     public User getProfile(String username){
         User user;
-        //try {
-        //    userTransaction.begin();
-        System.out.println("SETUSER");
-            user = entityManager.find(User.class, username);
-        //    userTransaction.commit();
-        //}catch (Exception e){
-        //    System.out.println("UserTransaction Failed get user");
-        //    return null;
-        //}
+        user = entityManager.find(User.class, username);
         return user;
     }
 }

@@ -54,13 +54,8 @@ public class UserFilter implements Filter {
             String realPass = dataBase.getProfile(username).getPassword().trim();
             String realToken = dataBase.getProfile(username).getToken().trim();
 
-            //System.out.println("ANSWER " + Objects.equals(realToken, token));
-
             if (authValues == null || !realPass.equals(password.trim()) ||
                     (token != null && !Objects.equals(realToken, token.trim()))) {
-                //System.out.println("UNA");
-                //System.out.println(realPass.compareTo(password));
-                //System.out.println(realPass + "/");
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             } else {
                 filterChain.doFilter(request, response);

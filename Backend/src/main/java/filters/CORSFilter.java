@@ -21,8 +21,6 @@ public class CORSFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         System.out.println("filters.CORSFilter HTTP Request: " + request.getMethod());
         System.out.println(request.getRequestURI());
-        //System.out.println("BODY ");
-        //request.getParameterMap().values().forEach(System.out::println);
 
         ((HttpServletResponse) servletResponse).addHeader("Access-Control-Allow-Origin", "*");
         ((HttpServletResponse) servletResponse).addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -34,7 +32,6 @@ public class CORSFilter implements Filter {
             return;
         }
 
-        //System.out.println("END OF CORS");
         filterChain.doFilter(request, servletResponse);
     }
 

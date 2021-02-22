@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import checkboxValues from "./constants";
 import { Checkbox } from "primereact/checkbox";
 import "primeicons/primeicons.css";
-//import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,8 +12,6 @@ export default function FormCheckBoxes(props) {
   const form = useSelector((state) => state.form);
   const selectedIndexes = variable === "X" ? form.x : form.r;
   const dispatch = useDispatch();
-
-  //console.log(selectedIndexes.some(item => item === 1));
 
   const onIndexChange = (e) => {
     //clean error if we have it

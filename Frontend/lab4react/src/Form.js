@@ -46,7 +46,6 @@ class Form extends React.Component {
         formData.append(`r[${index}]`, this.props.form.r[j]);
       }
     }
-    //could not to work properly
     this.props.FormPostFetch(formData);
   };
 

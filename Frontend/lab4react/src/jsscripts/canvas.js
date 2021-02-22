@@ -71,29 +71,6 @@ function clicked(ev) {
   console.log("ADD" + arrayRows.toString());
 }
 
-/*
-document.addEventListener("DOMNodeInserted", () => {
-  let row = document.getElementsById("resultTable").length - 1;
-  const index = arrayRows.indexOf(row);
-  console.log("THIS ROW " + row);
-  if (index !== -1) {
-    console.log(arrayRows.indexOf(row) + " " + arrayRows.toString());
-    arrayRows.splice(index, 1);
-    const x = document
-      .getElementsByClassName("order-table-row")[row]
-      .querySelectorAll("td")[0].innerText;
-    const y = document
-      .getElementsByClassName("order-table-row")[row]
-      .querySelectorAll("td")[1].innerText;
-    const hit = document
-      .getElementsByClassName("order-table-row")[row]
-      .querySelectorAll("td")[3].innerText;
-    drawPoint(x, y, hit);
-    arrayPoint.push([x, y, "none"]);
-  }
-});
-*/
-
 function error(txt, value = 1) {
   console.log("1");
   //main block with elements
@@ -152,4 +129,4 @@ function appear(element) {
   element.classList.remove("disappear");
 }
 
-export default { disappear, appear, createGraphic, drawPoint, clicked, error };
+export default { disappear, appear, clicked, error };

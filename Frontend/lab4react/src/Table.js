@@ -1,7 +1,5 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {getProfileFetch} from "./redux/actions/Fetch";
-import {useEffect} from "react/cjs/react.production.min";
+import {useSelector} from "react-redux";
 
 export default function Table() {
     const table = useSelector((state) => state.form.table);

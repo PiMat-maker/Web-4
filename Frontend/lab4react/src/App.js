@@ -6,7 +6,6 @@ import Login from "./RegLog/Login";
 import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { getProfileFetch } from "./redux/actions/Fetch";
-//import {setAnswer} from "./redux/reducers/formReducer";
 
 class App extends React.Component {
   state = {
@@ -63,7 +62,6 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    //setAnswer: (error) => dispatch(setAnswer(error)),
   getProfileFetch: () => dispatch(getProfileFetch())
 });
 

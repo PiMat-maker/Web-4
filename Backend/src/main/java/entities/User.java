@@ -1,12 +1,9 @@
 package main.java.entities;
 
 import main.java.security.SecurePassword;
-import main.java.entities.FormBean;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "userdata")
