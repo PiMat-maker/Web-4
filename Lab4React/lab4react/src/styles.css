@@ -1,0 +1,255 @@
+/*--------main_block------------*/
+html {
+  background-color: #fff3bf;
+  text-align: center;
+  font-family: sans-serif;
+  display: block;
+  font-size: 15px;
+}
+
+header {
+  padding: 15px;
+  text-align: center;
+}
+
+header p {
+  font-size: 13px;
+  font-style: italic;
+}
+
+#root {
+  overflow: hidden;
+  width: 1000px;
+  margin: auto;
+  background-color: #fff9e0;
+}
+
+svg {
+  background-color: #fff3bf;
+  border: 6px solid #fffff0;
+  padding: 40px;
+  margin-left: -50%;
+  margin-top: 6%;
+  width: 400px;
+  height: 400px;
+}
+
+#form {
+  width: 400px;
+  margin-top: -46%;
+  margin-left: 43%;
+}
+
+#form_button {
+  cursor: pointer;
+  width: 180px;
+  height: 40px;
+  font-size: 15px;
+  background-color: #c0a0fa;
+  margin-left: -25%;
+  margin-top: 10%;
+  border: 2px solid #332253;
+}
+
+#form_button:hover {
+  background-color: #ffdaba;
+  border: 2px solid #000000;
+}
+
+#form_button:focus {
+  background-color: #f2c9a5;
+  border: none;
+}
+
+.rectangle:hover,
+.circle:hover,
+.triangle:hover {
+  fill: #6eff86;
+  stroke: #206e2d;
+}
+/*---------------------------------------*/
+.block {
+  width: 300px;
+  height: 140px;
+  padding: 8px;
+  background-color: #ffdaba;
+  border: 3px dotted #ffffff;
+  margin: 15px 0;
+}
+
+#form {
+  width: 400px;
+  margin-top: -46%;
+  margin-left: 53%;
+  margin-top: -41%;
+}
+
+td {
+  width: 100px;
+}
+
+.checkbox-label {
+  margin: 40px;
+}
+
+#resultTable {
+  border-collapse: separate;
+  margin: 20px;
+  padding-top: 25px;
+  width: 960px;
+}
+
+#resultTable th {
+  background-color: #fffdd1;
+  color: black;
+}
+
+#resultTable * {
+  padding: 25px;
+}
+
+.string {
+  margin-left: 40%;
+}
+
+.headers {
+  color: #795faa;
+}
+
+.input {
+  margin: 5px;
+  background-color: #e1d9f1;
+  border: 1px solid #332253;
+  border-radius: 20%;
+}
+
+.input:focus {
+  background-color: rgb(255, 245, 226);
+  border: none;
+}
+
+.input:hover {
+  border: none;
+}
+
+.mainButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-size: 16xp;
+  color: #fff;
+  background-color: #795faa;
+  outline: none;
+  cursor: pointer;
+}
+
+.mainButton:hover {
+  border: 1px solid #795faa;
+  border-radius: 5px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-size: 16xp;
+  color: rgb(90, 53, 112);
+  background-color: #efe6ff;
+}
+
+.route {
+  padding: 30px;
+}
+
+.headButton:hover {
+  -webkit-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  transform: translateY(10px);
+}
+.headButton:hover:before {
+  opacity: 1;
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.headButton:hover,
+.headButton:focus {
+  -webkit-animation: linear 2.2s light infinite;
+  -moz-animation: linear 2.2s light infinite;
+  -o-animation: linear 2.2s light infinite;
+  animation: linear 2.2s light infinite;
+}
+@-webkit-keyframes light {
+  0% {
+    background-color: #e7dff5;
+    color: rgb(156, 121, 173);
+  }
+  50% {
+    background-color: #dbcef1;
+    color: rgb(34, 18, 41);
+  }
+  100% {
+    background-color: #ad99cf;
+    color: rgb(130, 90, 153);
+  }
+}
+@-moz-keyframes light {
+  0% {
+    background-color: #e7dff5;
+    color: rgb(156, 121, 173);
+  }
+  50% {
+    background-color: #dbcef1;
+    color: rgb(34, 18, 41);
+  }
+  100% {
+    background-color: #ad99cf;
+    color: rgb(130, 90, 153);
+  }
+}
+@-o-keyframes light {
+  0% {
+    background-color: #e7dff5;
+    color: rgb(156, 121, 173);
+  }
+  50% {
+    background-color: #dbcef1;
+    color: rgb(34, 18, 41);
+  }
+  100% {
+    background-color: #ad99cf;
+    color: rgb(130, 90, 153);
+  }
+}
+@keyframes light {
+  0% {
+    background-color: #e7dff5;
+    color: rgb(156, 121, 173);
+  }
+  50% {
+    background-color: #dbcef1;
+    color: rgb(34, 18, 41);
+  }
+  100% {
+    background-color: #ad99cf;
+    color: rgb(130, 90, 153);
+  }
+}
+.headButton:focus {
+  border: none;
+}
+
+.error {
+  color: #bb2a2a;
+}
+
+.headButton {
+  background-color: #bfafdd;
+  border: 1px solid #332253;
+  width: 120px;
+  line-height: 20px;
+  margin: 20px;
+  padding: 4px 12px;
+  text-shadow: 0 2px 2px rgba(161, 128, 204, 0.75);
+  transition-duration: 0.3s;
+  border-radius: 40%;
+}
