@@ -2,6 +2,7 @@ package main.java.filters;
 
 
 import main.java.entities.DataBase;
+import main.java.entities.User;
 import main.java.security.SecurePassword;
 
 import javax.ejb.EJB;
@@ -17,6 +18,7 @@ public class UserFilter implements Filter {
 
     @EJB
     private DataBase dataBase;
+    private User user;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -28,11 +30,9 @@ public class UserFilter implements Filter {
 
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        System.out.println("FILTER USER");
 
         try {
             String authorization = request.getHeader("Authorization");
-            System.out.println("authorization " + authorization);
             String[] authValues = null;
             if (authorization != null && authorization.toLowerCase().startsWith("bearer")) {
                 authValues = authorization.split(",");
@@ -47,12 +47,9 @@ public class UserFilter implements Filter {
                 password = authValues[1];
             }
 
-            System.out.println("USERNAME " + username);
-            System.out.println("PASSWORD " + password);
-            System.out.println("TOKEN " + token);
-
-            String realPass = dataBase.getProfile(username).getPassword().trim();
-            String realToken = dataBase.getProfile(username).getToken().trim();
+            user = dataBase.getProfile(username);
+            String realPass = user.getPassword().trim();
+            String realToken = user.getToken().trim();
 
             if (authValues == null || !realPass.equals(password.trim()) ||
                     (token != null && !Objects.equals(realToken, token.trim()))) {
@@ -61,7 +58,6 @@ public class UserFilter implements Filter {
                 filterChain.doFilter(request, response);
             }
         } catch (NullPointerException e){
-            System.out.println("Thor");
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
         }
     }

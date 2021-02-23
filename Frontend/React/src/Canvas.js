@@ -126,22 +126,22 @@ class Canvas extends React.Component {
     render(){
         return (
             <svg id="canvas" onClick={this.clicked}>
-                <line x1="0" x2="300" y1="150" y2="150" stroke="black"></line>
-                <line x1="150" x2="150" y1="0" y2="300" stroke="black"></line>
-                <polygon points="150,0 144,15 156,15" stroke="black"></polygon>
-                <polygon points="300,150 285,156 285,144" stroke="black"></polygon>
+                <line x1="0" x2="300" y1="150" y2="150" stroke="black"/>
+                <line x1="150" x2="150" y1="0" y2="300" stroke="black"/>
+                <polygon points="150,0 144,15 156,15" stroke="black"/>
+                <polygon points="300,150 285,156 285,144" stroke="black"/>
 
-                <line x1="200" x2="200" y1="155" y2="145" stroke="black"></line>
-                <line x1="250" x2="250" y1="155" y2="145" stroke="black"></line>
+                <line x1="200" x2="200" y1="155" y2="145" stroke="black"/>
+                <line x1="250" x2="250" y1="155" y2="145" stroke="black"/>
 
-                <line x1="50" x2="50" y1="155" y2="145" stroke="black"></line>
-                <line x1="100" x2="100" y1="155" y2="145" stroke="black"></line>
+                <line x1="50" x2="50" y1="155" y2="145" stroke="black"/>
+                <line x1="100" x2="100" y1="155" y2="145" stroke="black"/>
 
-                <line x1="145" x2="155" y1="100" y2="100" stroke="black"></line>
-                <line x1="145" x2="155" y1="50" y2="50" stroke="black"></line>
+                <line x1="145" x2="155" y1="100" y2="100" stroke="black"/>
+                <line x1="145" x2="155" y1="50" y2="50" stroke="black"/>
 
-                <line x1="145" x2="155" y1="200" y2="200" stroke="black"></line>
-                <line x1="145" x2="155" y1="250" y2="250" stroke="black"></line>
+                <line x1="145" x2="155" y1="200" y2="200" stroke="black"/>
+                <line x1="145" x2="155" y1="250" y2="250" stroke="black"/>
 
                 <text x="195" y="140">
                     R/2
@@ -177,7 +177,7 @@ class Canvas extends React.Component {
                     fill="#FF69B4"
                     fillOpacity="0.3"
                     stroke="#FF69B4"
-                ></polygon>
+                />
 
                 <path
                     className="circle"
@@ -185,7 +185,7 @@ class Canvas extends React.Component {
                     fill="#FF4500"
                     fillOpacity="0.3"
                     stroke="#FF4500"
-                ></path>
+                />
 
                 <polygon
                     className="triangle"
@@ -193,9 +193,9 @@ class Canvas extends React.Component {
                     fill="#FFA500"
                     fillOpacity="0.3"
                     stroke="#FFA500"
-                ></polygon>
+                />
 
-                <circle r="0" cx="150" cy="150" id="target-dot"></circle>
+                <circle r="0" cx="150" cy="150" id="target-dot"/>
             </svg>
         );
     }

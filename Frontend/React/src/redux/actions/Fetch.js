@@ -85,7 +85,7 @@ export const getProfileFetch = () => {
     const token = localStorage.token;
     if (token) {
         return axios(
-            "http://127.0.0.1:16161/Lab4a_war_exploded/api/form/" +
+            "http://127.0.0.1:16161/Lab4a_war_exploded/api/points/" +
             localStorage.getItem("username"),
             {
                 method: "GET",

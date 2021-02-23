@@ -27,7 +27,6 @@ public class UserManager {
     public Response addUser(@PathParam("username") String username, @Context HttpServletRequest request, @Context HttpServletResponse response, Map<String, String> params) {
 
         User user = null;
-        System.out.println("ADD USER");
         try {
             user = dataBase.getProfile(username);
             if (user != null){
@@ -63,14 +62,12 @@ public class UserManager {
         User user = null;
         try {
             user = dataBase.getProfile(username);
-            System.out.println(user);
             if (user == null){
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
         } catch (Exception e){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        System.out.println("Check user");
         return Response.ok(user).build();
     }
 }

@@ -6,7 +6,7 @@ export const FormPostFetch = (formData) => {
 
   return (dispatch) => {
     return axios(
-      "http://127.0.0.1:16161/Lab4a_war_exploded/api/form/" +
+      "http://127.0.0.1:16161/Lab4a_war_exploded/api/points/" +
         localStorage.getItem("username"),
       {
         method: "POST",
@@ -20,7 +20,6 @@ export const FormPostFetch = (formData) => {
         console.log("DATA FROM FORMPOSTFETCH = " + resp.data);
         if (resp) {
           dispatch(setTable(resp.data));
-          console.log("setTable in formpostfetch");
         } else {
             dispatch(setAnswer("Empty request"));
         }

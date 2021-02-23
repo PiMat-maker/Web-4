@@ -3,7 +3,6 @@ package main.java.manager;
 import main.java.entities.DataBase;
 import main.java.entities.FormBean;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.servlet.http.HttpServletRequest;
@@ -11,12 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 @Singleton
-@Path("/form/{username}")
+@Path("/points/{username}")
 public class FormManager {
 
     @EJB
@@ -36,17 +34,13 @@ public class FormManager {
                 x = Double.parseDouble(String.format("%.3f", x));
                 y = Double.parseDouble(String.format("%.3f", y));
 
-                System.out.println("USER " + username);
-
                 dataBase.addPoint(x, y, r, username);
-                System.out.println(i);
             }
             res = dataBase.getList(username);
         } catch (Exception e){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
-        System.out.println("X " + res.get(0).getX());
         return Response.ok(res).build();
     }
 
