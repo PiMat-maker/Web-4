@@ -15,22 +15,11 @@ public class DataBase implements Serializable {
     @PersistenceContext(unitName = "manager")
     private EntityManager entityManager;
 
-    private FormBean formBean;
-
     public DataBase() {}
-
-    public void setFormBean(FormBean formBean) { this.formBean = formBean; }
-
-    public FormBean getFormBean() { return formBean; }
 
     public void setEntityManager(EntityManager entityManager) { this.entityManager = entityManager; }
 
     public EntityManager getEntityManager() { return entityManager; }
-
-    @PostConstruct
-    public void init(){
-        formBean = new FormBean();
-    }
 
     public void saveData(FormBean formBean, String username) {
         User user = entityManager.find(User.class, username);
@@ -52,8 +41,8 @@ public class DataBase implements Serializable {
         entityManager.createQuery("delete from User res where res.username like :username").setParameter("username", username);
     }
 
-    public void addPoint(String username){
-        saveData(new FormBean(formBean.getX(), formBean.getY(), formBean.getR()), username);
+    public void addPoint(double x, double y, double r, String username){
+        saveData(new FormBean(x, y, r), username);
     }
 
     public void setUser(String username, String password, String token) {

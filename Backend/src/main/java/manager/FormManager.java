@@ -36,15 +36,9 @@ public class FormManager {
                 x = Double.parseDouble(String.format("%.3f", x));
                 y = Double.parseDouble(String.format("%.3f", y));
 
-                System.out.println(x + " " + y + " " + r);
-
-                dataBase.getFormBean().setX(x);
-                dataBase.getFormBean().setY(y);
-                dataBase.getFormBean().setR(r);
-
                 System.out.println("USER " + username);
 
-                dataBase.addPoint(username);
+                dataBase.addPoint(x, y, r, username);
                 System.out.println(i);
             }
             res = dataBase.getList(username);
