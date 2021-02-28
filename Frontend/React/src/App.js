@@ -30,17 +30,13 @@ class App extends React.Component {
       <div className="route">
           <Redirect to="/"/>
         <Link
-          type="submit"
           to="/signup"
           onClick={this.clicked}
-          value="For Sign Up"
           className="headButton"
         >For Sign Up</Link>
         <Link
-          type="submit"
           to="/login"
           onClick={this.clicked}
-          value="For Login"
           className="headButton"
         >For Login</Link>
 
