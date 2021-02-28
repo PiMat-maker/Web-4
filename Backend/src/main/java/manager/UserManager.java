@@ -65,7 +65,7 @@ public class UserManager {
             user = dataBase.getProfile(username);
             password = SecurePassword.generate(password);
             String realPass = user.getPassword().trim();
-            if (user == null || !realPass.equals(password.trim())){
+            if (!realPass.equals(password.trim())){
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
             String token = Token.generateToken(user.getToken());

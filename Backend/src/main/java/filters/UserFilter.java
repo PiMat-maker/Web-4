@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
-@WebFilter(urlPatterns = {"/api/form/*", "/api/user/profile/*", "/api/user/login/*"})
+@WebFilter(urlPatterns = {"/api/points/*", "/api/user/profile/*"})
 public class UserFilter implements Filter {
 
     @EJB
@@ -44,6 +44,8 @@ public class UserFilter implements Filter {
 
             user = dataBase.getProfile(username);
             String realToken = user.getToken().trim();
+            System.out.println(realToken);
+            System.out.println(token.trim());
 
             if (token != null && !Objects.equals(realToken, token.trim())) {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);

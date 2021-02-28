@@ -89,7 +89,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/META-INF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -230,6 +230,7 @@
       <workItem from="1614317876431" duration="5254000" />
       <workItem from="1614431440021" duration="1279000" />
       <workItem from="1614518587118" duration="2782000" />
+      <workItem from="1614528156659" duration="3708000" />
     </task>
     <servers />
   </component>
@@ -245,10 +246,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1611352498643" />
-    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612979556683">
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614528207955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1612979556683" />
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1614528207955" />
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1611605247394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -257,22 +258,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611412154933" />
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom" timestamp="1614525720592">
+    <state width="1024" height="207" key="GridCell.Tab.0.bottom" timestamp="1614534317300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614525720592" />
-    <state width="1024" height="210" key="GridCell.Tab.0.center" timestamp="1614525720592">
+    <state width="1024" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
+    <state width="1024" height="207" key="GridCell.Tab.0.center" timestamp="1614534317300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614525720592" />
-    <state width="1024" height="210" key="GridCell.Tab.0.left" timestamp="1614525720586">
+    <state width="1024" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
+    <state width="1024" height="207" key="GridCell.Tab.0.left" timestamp="1614534317300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614525720586" />
-    <state width="1024" height="210" key="GridCell.Tab.0.right" timestamp="1614525720592">
+    <state width="1024" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
+    <state width="1024" height="207" key="GridCell.Tab.0.right" timestamp="1614534317300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614525720592" />
+    <state width="1024" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
     <state width="1024" height="210" key="GridCell.Tab.1.bottom" timestamp="1611607559562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

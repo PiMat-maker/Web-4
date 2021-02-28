@@ -23,10 +23,22 @@ public class FormManager {
     @POST
     @Consumes("multipart/form-data")
     public Response addPoint(@PathParam("username") String username, @Context HttpServletRequest request, @Context HttpServletResponse response, Map<String, Double> params) {
+        
+        String token = null;
+        String authorization = request.getHeader("Authorization");
+        String[] authValues = null;
+
+        if (authorization != null && authorization.toLowerCase().startsWith("bearer")) {
+            authValues = authorization.split(",");
+            token = authValues[1].trim();
+        }
 
         List<FormBean> res = null;
         try {
-            for (int i = 0; i < params.size()/3; ++i) {
+            if (token == null || !token.equals(dataBase.getProfile(username).getToken().trim()))
+                throw new NotAuthorizedException("Unauthorized");
+
+            for (int i = 0; i < params.size() / 3; ++i) {
                 double x = params.get("x[" + i + "]");
                 double y = params.get("y[" + i + "]");
                 double r = params.get("r[" + i + "]");
@@ -37,6 +49,8 @@ public class FormManager {
                 dataBase.addPoint(x, y, r, username);
             }
             res = dataBase.getList(username);
+        } catch (NotAuthorizedException e){
+                return Response.status(Response.Status.UNAUTHORIZED).build();
         } catch (Exception e){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }

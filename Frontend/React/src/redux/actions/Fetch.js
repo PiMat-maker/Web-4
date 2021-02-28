@@ -21,7 +21,7 @@ export const userPostFetch = (user) => {
             dispatch(setAnswer("Empty request"));
         } else {
             localStorage.setItem("username", user.username)
-            localStorage.setItem("token", resp.data.token)
+            localStorage.setItem("token", resp.data)
           dispatch(
             login_user({
               username: user.username,
@@ -57,7 +57,7 @@ export const userLoginFetch = (user) => {
                 dispatch(setAnswer("Empty request"));
             } else {
                 localStorage.setItem("username", user.username)
-                localStorage.setItem("token", resp.data.token)
+                localStorage.setItem("token", resp.data)
                 dispatch(
                     login_user({
                         username: user.username,
