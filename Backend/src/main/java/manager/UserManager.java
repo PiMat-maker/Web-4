@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Map;
 
@@ -22,9 +23,9 @@ public class UserManager {
     private DataBase dataBase;
 
     @POST
-    @Consumes("multipart/form-data")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Path("/register/{username}")
-    public Response addUser(@PathParam("username") String username, @Context HttpServletRequest request, @Context HttpServletResponse response, Map<String, String> params) {
+    public Response addUser(@PathParam("username") String username, @Context HttpServletRequest request, @FormParam("password") String password) {
 
         User user = null;
         try {
@@ -32,7 +33,6 @@ public class UserManager {
             if (user != null){
                 return Response.status(Response.Status.FORBIDDEN).build();
             }
-            String password = params.get("password");
             password = SecurePassword.generate(password);
             String token = Token.generateToken(username);
             dataBase.setUser(username, password, token);
@@ -41,7 +41,7 @@ public class UserManager {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
-        return Response.ok(user).build();
+        return Response.ok(user.getToken()).build();
     }
 
     @GET
@@ -53,21 +53,26 @@ public class UserManager {
         } catch (Exception e){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(user).build();
+        return Response.ok(user.getToken()).build();
     }
 
     @POST
     @Path("/login/{username}")
-    public Response checkUser(@PathParam("username") String username){
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public Response checkUser(@PathParam("username") String username, @FormParam("password") String password){
         User user = null;
         try {
             user = dataBase.getProfile(username);
-            if (user == null){
+            password = SecurePassword.generate(password);
+            String realPass = user.getPassword().trim();
+            if (user == null || !realPass.equals(password.trim())){
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
+            String token = Token.generateToken(user.getToken());
+            user.setToken(token);
         } catch (Exception e){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(user).build();
+        return Response.ok(user.getToken()).build();
     }
 }

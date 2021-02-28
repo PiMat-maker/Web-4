@@ -7,37 +7,6 @@ import { connect } from "react-redux";
 
 class Canvas extends React.Component {
 
-    constructor(){
-        super(1);
-
-        this.state = {
-            arrayPoint : [],
-            currentNumberRows : document.getElementsByClassName("order-table-row").length,
-            arrayRows : []
-        }
-
-        document.addEventListener("DOMNodeInserted", () => {
-            let row = document.getElementsByClassName("order-table-row").length - 1;
-            const index = this.state.arrayRows.indexOf(row);
-            console.log("THIS ROW " + row);
-            if (index !== -1) {
-                console.log(this.state.arrayRows.indexOf(row) + " " + this.state.arrayRows.toString());
-                this.state.arrayRows.splice(index, 1);
-                const x = document
-                    .getElementsByClassName("order-table-row")[row].querySelectorAll("td")[0].innerText;
-                const y = document
-                    .getElementsByClassName("order-table-row")[row].querySelectorAll("td")[1].innerText;
-                const r = document
-                    .getElementsByClassName("order-table-row")[row].querySelectorAll("td")[2].innerText;
-                const hit = document
-                    .getElementsByClassName("order-table-row")[row].querySelectorAll("td")[3].innerText;
-                this.drawPoint(x, y, r, hit);
-                this.state.arrayPoint.push([x, y, r, "none"]);
-            }
-        });
-    }
-
-
     clicked = (ev) => {
         console.log("Click on canvas");
         let canvas = document.getElementById("canvas");
@@ -75,18 +44,6 @@ class Canvas extends React.Component {
         }
 
         //count number of columns in result
-        this.state.arrayRows.push(
-            Math.max(
-                this.state.currentNumberRows,
-                document.getElementsByClassName("order-table-row").length
-            )
-        );
-        this.setState({
-            currentNumberRows : Math.max(
-                this.state.currentNumberRows + 1,
-                document.getElementsByClassName("order-table-row").length + 1
-            )});
-        console.log("ADD" + this.state.arrayRows.toString());
 
         console.log("Send request");
 
@@ -99,7 +56,22 @@ class Canvas extends React.Component {
         }
 
         this.props.FormPostFetch(formData);
+        const hit = this.checkArea(xCalculated,yCalculated);
+        this.drawPoint(xCalculated,yCalculated, 1, hit)
     };
+
+    checkArea = (x,y) => {
+
+        //circle
+        if (Math.floor(x) >= 0 && Math.ceil(y) <= 0 && (x*x + y*y) <= 1/4) return "true";
+
+        // rectangle
+        if (Math.floor(x) >= 0 && Math.ceil(x) <= 1 && Math.floor(y) >= 0 && Math.ceil(y) <= 1) return "true";
+
+        //triangle
+        if (Math.ceil(x) <= 0 && Math.floor(y) >= 0 && Math.ceil(-2*x + parseFloat(y)) <= 1) return "true";
+        return "false";
+    }
 
     drawPoint = (x, y, r, hit) => {
         console.log("Marking point " + x + ", " + y + ", " + r + ", " + hit);

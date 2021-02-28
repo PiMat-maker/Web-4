@@ -68,30 +68,6 @@
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="results: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="access methods" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="extensions" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
     </expand>
     <select />
   </component>
@@ -249,6 +225,11 @@
       <workItem from="1614081199628" duration="444000" />
       <workItem from="1614081661876" duration="20000" />
       <workItem from="1614107050372" duration="1118000" />
+      <workItem from="1614196335153" duration="3783000" />
+      <workItem from="1614284944006" duration="1171000" />
+      <workItem from="1614317876431" duration="5254000" />
+      <workItem from="1614431440021" duration="1279000" />
+      <workItem from="1614518587118" duration="2782000" />
     </task>
     <servers />
   </component>
@@ -276,22 +257,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611412154933" />
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom" timestamp="1614108175039">
+    <state width="1024" height="210" key="GridCell.Tab.0.bottom" timestamp="1614525720592">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614108175039" />
-    <state width="1024" height="210" key="GridCell.Tab.0.center" timestamp="1614108175039">
+    <state width="1024" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614525720592" />
+    <state width="1024" height="210" key="GridCell.Tab.0.center" timestamp="1614525720592">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614108175039" />
-    <state width="1024" height="210" key="GridCell.Tab.0.left" timestamp="1614108175039">
+    <state width="1024" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614525720592" />
+    <state width="1024" height="210" key="GridCell.Tab.0.left" timestamp="1614525720586">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614108175039" />
-    <state width="1024" height="210" key="GridCell.Tab.0.right" timestamp="1614108175039">
+    <state width="1024" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614525720586" />
+    <state width="1024" height="210" key="GridCell.Tab.0.right" timestamp="1614525720592">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614108175039" />
+    <state width="1024" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614525720592" />
     <state width="1024" height="210" key="GridCell.Tab.1.bottom" timestamp="1611607559562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -308,10 +289,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1024" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611607559562" />
-    <state width="195" height="457" key="HiddenNamespacesPopup" timestamp="1613142998989">
+    <state width="195" height="457" key="HiddenNamespacesPopup" timestamp="1614376427921">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="195" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1613142998989" />
+    <state width="195" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1614376427921" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1611413971159">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -332,10 +313,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="635" y="304" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1536.824@0.0.1536.824" timestamp="1612979482538" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1614107072575">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1614518587730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1614107072575" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1614518587730" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1611526796515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

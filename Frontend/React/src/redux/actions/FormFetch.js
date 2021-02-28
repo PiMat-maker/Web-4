@@ -12,12 +12,11 @@ export const FormPostFetch = (formData) => {
         method: "POST",
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer,${localStorage.getItem("password")},${localStorage.getItem("token")}`
+          Authorization: `Bearer,${localStorage.getItem("token")}`
         },
         data: formData
       }
     ).then((resp) => {
-        console.log("DATA FROM FORMPOSTFETCH = " + resp.data);
         if (resp) {
           dispatch(setTable(resp.data));
         } else {

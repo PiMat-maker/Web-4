@@ -31,8 +31,8 @@ public class FormManager {
                 double y = params.get("y[" + i + "]");
                 double r = params.get("r[" + i + "]");
 
-                x = Double.parseDouble(String.format("%.3f", x));
-                y = Double.parseDouble(String.format("%.3f", y));
+                x = Double.parseDouble(String.format("%.4f", x));
+                y = Double.parseDouble(String.format("%.4f", y));
 
                 dataBase.addPoint(x, y, r, username);
             }
@@ -49,9 +49,9 @@ public class FormManager {
         List<FormBean> res = null;
         try {
             res = dataBase.getList(username);
-    } catch (Exception e){
-        return Response.status(Response.Status.BAD_REQUEST).build();
-    }
+        } catch (Exception e){
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
         return Response.ok(res).build();
     }
 }

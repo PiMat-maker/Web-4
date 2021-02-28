@@ -5,10 +5,6 @@ import {serverError} from "../error";
 
 export const userPostFetch = (user) => {
 
-    const formData = new FormData();
-    formData.append("username", user.username);
-    formData.append("password", user.password);
-
   return (dispatch) => {
     return axios({
       url:
@@ -16,21 +12,19 @@ export const userPostFetch = (user) => {
           user.username,
       method: "POST",
       headers: {
-        "Content-Type": "multipart/form-data"
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-      data: formData
+      data: "password=" + user.password
     }).then((resp) => {
           console.log(resp)
         if (resp.data.message) {
             dispatch(setAnswer("Empty request"));
         } else {
-            localStorage.setItem("username", resp.data.username)
-            localStorage.setItem("password", resp.data.password)
+            localStorage.setItem("username", user.username)
             localStorage.setItem("token", resp.data.token)
           dispatch(
             login_user({
-              username: resp.data.username,
-              password: resp.data.password,
+              username: user.username,
                 token: resp.data.token
             })
           );
@@ -53,22 +47,20 @@ export const userLoginFetch = (user) => {
               user.username,
         method: "POST",
         headers: {
-          "Content-Type": "multipart/form-data",
-            Authorization: `Bearer,${user.password}`
-        }
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        data: "password=" + user.password
       }
     ).then(resp => {
-            console.log(resp.data.username)
+            console.log(user.username)
             if (resp.data.message) {
                 dispatch(setAnswer("Empty request"));
             } else {
-                localStorage.setItem("username", resp.data.username)
-                localStorage.setItem("password", resp.data.password)
+                localStorage.setItem("username", user.username)
                 localStorage.setItem("token", resp.data.token)
                 dispatch(
                     login_user({
-                        username: resp.data.username,
-                        password: resp.data.password,
+                        username: user.username,
                         token: resp.data.token
                     })
                 );
@@ -90,7 +82,7 @@ export const getProfileFetch = () => {
             {
                 method: "GET",
                 headers: {
-                    Authorization: `Bearer,${localStorage.getItem("password")},${localStorage.getItem("token")}`
+                    Authorization: `Bearer,${localStorage.getItem("token")}`
                 }
             }
       )

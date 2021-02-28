@@ -34,25 +34,18 @@ public class UserFilter implements Filter {
         try {
             String authorization = request.getHeader("Authorization");
             String[] authValues = null;
+            String token = null;
             if (authorization != null && authorization.toLowerCase().startsWith("bearer")) {
                 authValues = authorization.split(",");
+                token = authValues[1];
             }
             String[] path = request.getPathInfo().split("/");
             String username = path[path.length - 1];
-            String password = authValues[1];
-            password = SecurePassword.generate(password);
-            String token= null;
-            if (authValues.length == 3){
-                token = authValues[2];
-                password = authValues[1];
-            }
 
             user = dataBase.getProfile(username);
-            String realPass = user.getPassword().trim();
             String realToken = user.getToken().trim();
 
-            if (authValues == null || !realPass.equals(password.trim()) ||
-                    (token != null && !Objects.equals(realToken, token.trim()))) {
+            if (token != null && !Objects.equals(realToken, token.trim())) {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             } else {
                 filterChain.doFilter(request, response);

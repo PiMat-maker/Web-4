@@ -3,7 +3,7 @@ import "./styles.css";
 import Signup from "./RegLog/Signup";
 import Main from "./Main";
 import Login from "./RegLog/Login";
-import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import {Switch, Route, withRouter, Redirect, Link} from "react-router-dom";
 import { connect } from "react-redux";
 import { getProfileFetch } from "./redux/actions/Fetch";
 
@@ -14,7 +14,7 @@ class App extends React.Component {
 
   clicked = (e) => {
     this.setState({
-      url: e.target.name
+      url: e.target.to
     });
   };
 
@@ -28,30 +28,29 @@ class App extends React.Component {
       </div>
     ) : (
       <div className="route">
-        <input
+          <Redirect to="/"/>
+        <Link
           type="submit"
-          name="/signup"
+          to="/signup"
           onClick={this.clicked}
           value="For Sign Up"
           className="headButton"
-        />
-        <input
+        >For Sign Up</Link>
+        <Link
           type="submit"
-          name="/login"
+          to="/login"
           onClick={this.clicked}
           value="For Login"
           className="headButton"
-        />
-        <Redirect to={this.state.url} />
+        >For Login</Link>
+
 
         <Switch>
           <Route path="/signup">
-            {" "}
-            <Signup />{" "}
+            <Signup />
           </Route>
           <Route path="/login">
-            {" "}
-            <Login />{" "}
+            <Login />
           </Route>
         </Switch>
           <br/>
