@@ -20,7 +20,7 @@ class App extends React.Component {
 
   render() {
     return this.props.currentUser.username ? (
-      <div className="main">
+      <div>
         <Route path="/main">
           <Main />
         </Route>

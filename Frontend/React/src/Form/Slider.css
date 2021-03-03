@@ -1,10 +1,15 @@
 .y {
-  width: 14rem;
+  width: auto;
+  padding: 10px;
+}
+
+.string{
+  padding: 10px;
 }
 
 #slider {
   width: 300px;
   height: 40px;
   text-align: center;
-  margin: 10px 0;
+  margin: 10px auto;
 }

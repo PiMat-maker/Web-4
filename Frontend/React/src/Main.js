@@ -17,15 +17,17 @@ export default function Main() {
     dispatch(logout_user());
   };
 
-  return (
-    <div className="main">
-        <header>
-            <label htmlFor={"logout"}>user: {localStorage.getItem("username")}  </label>
-            <button id = "logout" className="mainButton" onClick={click}> Logout </button>
-        </header>
-      <Canvas />
-      <Form />
-      <Table />
-    </div>
-  );
+    return (
+        <div className="main">
+            <div className="canvas">
+                <Canvas />
+                <div id="back">
+                    <label htmlFor={"logout"}>user: {localStorage.getItem("username")}  </label>
+                    <button id = "logout" className="mainButton" onClick={click}> Logout </button>
+                </div>
+            </div>
+            <div className="form"><Form /></div>
+            <div className="table"><Table /></div>
+        </div>
+    );
 }

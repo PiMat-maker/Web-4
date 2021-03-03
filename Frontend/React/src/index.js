@@ -9,7 +9,15 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+        <div id="top_header">
+            <section className="gif">
+                <img src="пингвинчик.gif" alt="тут был пингвинчик"/>
+            </section>
+
+            <p className="top">Лабораторная работа №4, Bариант 2763</p>
+            <p className="top">Выполнили: Полозова Екатерина, Кудлаков Роман (P3231)</p>
+        </div>
+      <App/>
     </Provider>
   </BrowserRouter>,
   rootElement

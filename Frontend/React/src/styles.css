@@ -1,18 +1,199 @@
-/*--------main_block------------*/
 html {
   background-color: #fff3bf;
   text-align: center;
   font-family: sans-serif;
-  display: block;
   font-size: 15px;
 }
 
-header {
-  padding: 15px;
-  text-align: center;
+body {
+  margin: auto;
 }
 
-header p {
+.canvas {
+  grid-area: n;
+}
+
+.form {
+  grid-area: c;
+  margin: auto;
+  align-content: center;
+}
+
+.table {
+  grid-area: t;
+  margin: auto;
+}
+
+@media screen and (min-width: 1247px) {
+  .main {
+    display: grid;
+    margin-top: 30px;
+    grid-template-rows: 520px 1fr;
+    grid-template-columns: 50% 50%;
+    width: 1000px;
+    justify-items: center;
+    grid-template-areas:
+            "n c"
+            "t t";
+
+  }
+
+  #form_button {
+    font-size: 17px;
+  }
+
+  .input {
+    width: 150px;
+    height: 20px;
+
+    font-size: 15px;
+  }
+  .headButton {
+    margin: 20px;
+    padding: 4px 12px;
+    font-size: 15px;
+  }
+
+  #login_form{
+    font-size: 15px;
+  }
+  #singup_form{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1246px) and (min-width: 707px) {
+
+
+  .string, #back label{
+    font-size: 18px;
+  }
+
+  .main {
+    display: grid;
+    margin-top: 5px;
+    grid-template-rows: 450px 520px 1fr;
+    grid-template-columns: 1fr;
+    width: 1000px;
+    justify-items: center;
+    grid-template-areas:
+            "n"
+            "c"
+            "t";
+
+  }
+  #form_button {
+    width: 190px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .input {
+    width: 220px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .headButton {
+    margin: 20px;
+    padding: 8px 20px;
+    font-size: 18px;
+  }
+
+  .mainButton {
+    padding: 12px 22px;
+    font-size: 17px;
+  }
+
+
+  .canvas{
+    margin: auto;
+  }
+
+  #login_form{
+    font-size: 18px;
+  }
+  #singup_form{
+    font-size: 18px;
+  }
+
+
+}
+@media screen and (max-width: 706px) {
+
+  .string, #back label{
+    font-size: 22px;
+  }
+
+  .main {
+    display: grid;
+    margin-top: 5px;
+    grid-template-rows: 450px 520px 1fr;
+    grid-template-columns: 1fr;
+    width: 500px;
+    justify-items: center;
+    grid-template-areas:
+            "n"
+            "c"
+            "t";
+
+  }
+  #form_button {
+    width: 200px;
+    height: 50px;
+    font-size: 23px;
+  }
+
+  .input {
+    width: 250px;
+    height: 50px;
+    font-size: 25px;
+  }
+
+  .mainButton {
+    padding: 14px 24px;
+    font-size: 19px;
+  }
+
+
+  #top_header{
+    margin: 10px auto;
+  }
+
+  .canvas{
+    margin: auto;
+  }
+
+  .headButton {
+    margin: 20px;
+    padding: 10px 24px;
+    font-size: 20px;
+  }
+  #login_form{
+    font-size: 20px;
+  }
+  #singup_form{
+    font-size: 20px;
+  }
+}
+
+.headButton {
+  width: 120px;
+  line-height: 20px;
+  background-color: #bfafdd;
+  border: 1px solid #332253;
+  text-shadow: 0 2px 2px rgba(161, 128, 204, 0.75);
+  transition-duration: 0.3s;
+  border-radius: 40%;
+  text-decoration: none;
+}
+
+#head {
+  text-align: center;
+  grid-area: h;
+  margin: 15px auto;
+}
+
+#head p {
   font-size: 13px;
   font-style: italic;
 }
@@ -28,27 +209,18 @@ svg {
   background-color: #fff3bf;
   border: 6px solid #fffff0;
   padding: 40px;
-  margin-left: -50%;
-  margin-top: 6%;
   width: 400px;
   height: 400px;
 }
 
-#form {
-  width: 400px;
-  margin-top: -46%;
-  margin-left: 43%;
-}
 
 #form_button {
   cursor: pointer;
   width: 180px;
   height: 40px;
-  font-size: 15px;
   background-color: #c0a0fa;
-  margin-left: -25%;
-  margin-top: 10%;
   border: 2px solid #332253;
+  margin: 20px auto;
 }
 
 #form_button:hover {
@@ -67,21 +239,18 @@ svg {
   fill: #6eff86;
   stroke: #206e2d;
 }
-/*---------------------------------------*/
+
 .block {
   width: 300px;
   height: 140px;
   padding: 8px;
   background-color: #ffdaba;
   border: 3px dotted #ffffff;
-  margin: 15px 0;
+  margin: auto;
 }
 
 #form {
   width: 400px;
-  margin-top: -46%;
-  margin-left: 53%;
-  margin-top: -41%;
 }
 
 td {
@@ -94,8 +263,6 @@ td {
 
 #resultTable {
   border-collapse: separate;
-  margin: 20px;
-  padding-top: 25px;
   width: 960px;
 }
 
@@ -106,14 +273,6 @@ td {
 
 #resultTable * {
   padding: 25px;
-}
-
-.string {
-  margin-left: 40%;
-}
-
-.headers {
-  color: #795faa;
 }
 
 .input {
@@ -138,7 +297,6 @@ td {
   border-radius: 5px;
   font-family: sans-serif;
   letter-spacing: 1px;
-  font-size: 16xp;
   color: #fff;
   background-color: #795faa;
   outline: none;
@@ -150,13 +308,12 @@ td {
   border-radius: 5px;
   font-family: sans-serif;
   letter-spacing: 1px;
-  font-size: 16xp;
   color: rgb(90, 53, 112);
   background-color: #efe6ff;
 }
 
 .route {
-  padding: 30px;
+  padding: 10px;
 }
 
 .headButton:hover {
@@ -240,16 +397,11 @@ td {
 
 .error {
   color: #bb2a2a;
+  padding: 10px;
 }
 
-.headButton {
-  background-color: #bfafdd;
-  border: 1px solid #332253;
-  width: 120px;
-  line-height: 20px;
-  margin: 20px;
-  padding: 4px 12px;
-  text-shadow: 0 2px 2px rgba(161, 128, 204, 0.75);
-  transition-duration: 0.3s;
-  border-radius: 40%;
+
+
+#back{
+  margin: 10px auto;
 }
