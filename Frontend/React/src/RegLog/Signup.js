@@ -11,21 +11,25 @@ class Signup extends React.Component {
   };
 
   change = (e) => {
-      this.props.setAnswer("");
     this.setState({
       [e.target.name]: e.target.value,
       errorMessage: ""
     });
+    this.props.setAnswer("");
   };
 
   submit = (e) => {
     e.preventDefault();
-    if (this.state.username === "" || this.state.password === "") {
-      this.setState({ errorMessage: "Please fill all the fields" });
+    this.props.setAnswer("");
+    this.setState({
+        errorMessage: ""
+    })
+    if (this.state.username.search(/ /g) !== -1 || this.state.password.search(/ /g) !== -1) {
+      this.setState({ errorMessage: "Please fill all the fields or remove spaces" });
       console.log(this.state.errorMessage);
-      return;
+    } else {
+        this.props.userPostFetch(this.state);
     }
-    this.props.userPostFetch(this.state);
   };
 
   render() {
@@ -59,7 +63,7 @@ class Signup extends React.Component {
 
         <br />
         <br />
-        <label className="error"> {this.state.errorMessage} </label>
+        <label className="error string"> {this.state.errorMessage} </label>
       </form>
     );
   }

@@ -6,7 +6,8 @@ export const FormPostFetch = (formData) => {
 
   return (dispatch) => {
     return axios(
-      "http://127.0.0.1:16161/Lab4a_war_exploded/api/points/" +
+      //"http://127.0.0.1:16161/Lab4a_war_exploded/api/points/" +
+        "http://localhost:16021/Lab4a_war/api/points/" +
         localStorage.getItem("username"),
       {
         method: "POST",

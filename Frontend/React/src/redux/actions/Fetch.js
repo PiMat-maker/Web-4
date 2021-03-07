@@ -8,7 +8,8 @@ export const userPostFetch = (user) => {
   return (dispatch) => {
     return axios({
       url:
-        "http://127.0.0.1:16161/Lab4a_war_exploded/api/user/register/" +
+        //"http://127.0.0.1:16161/Lab4a_war_exploded/api/user/register/" +
+      "http://localhost:16021/Lab4a_war/api/user/register/" +
           user.username,
       method: "POST",
       headers: {
@@ -43,7 +44,8 @@ export const userLoginFetch = (user) => {
 
   return (dispatch) => {
     return axios({
-          url: "http://127.0.0.1:16161/Lab4a_war_exploded/api/user/login/" +
+          url: //"http://127.0.0.1:16161/Lab4a_war_exploded/api/user/login/" +
+        "http://localhost:16021/Lab4a_war/api/user/login/" +
               user.username,
         method: "POST",
         headers: {
@@ -77,7 +79,8 @@ export const getProfileFetch = () => {
     const token = localStorage.token;
     if (token) {
         return axios(
-            "http://127.0.0.1:16161/Lab4a_war_exploded/api/points/" +
+            //"http://127.0.0.1:16161/Lab4a_war_exploded/api/points/" +
+            "http://localhost:16021/Lab4a_war/api/points/" +
             localStorage.getItem("username"),
             {
                 method: "GET",

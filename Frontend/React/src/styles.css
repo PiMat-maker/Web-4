@@ -1,12 +1,12 @@
 html {
-  background-color: #fff3bf;
+
+  background-color: #fff9e0;
   text-align: center;
   font-family: sans-serif;
   font-size: 15px;
 }
-
-body {
-  margin: auto;
+.string{
+  margin: 10px auto;
 }
 
 .canvas {
@@ -16,26 +16,57 @@ body {
 .form {
   grid-area: c;
   margin: auto;
-  align-content: center;
 }
 
 .table {
   grid-area: t;
-  margin: auto;
+  margin: 10px auto;
+}
+
+
+#root {
+
+  display: grid;
+  grid-template-rows: 150px 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-template-areas:
+            "h"
+            "main";
+
+}
+
+.main{
+  grid-area: main;
+  justify-items: center;
+  grid-gap: 10px;
 }
 
 @media screen and (min-width: 1247px) {
+
+  .block {
+    width: 300px;
+    height: 140px;
+  }
+
   .main {
     display: grid;
-    margin-top: 30px;
     grid-template-rows: 520px 1fr;
-    grid-template-columns: 50% 50%;
-    width: 1000px;
-    justify-items: center;
+    grid-template-columns: 500px 500px;
     grid-template-areas:
             "n c"
             "t t";
 
+  }
+
+
+  .checkbox-label{
+    font-size: 15px;
+  }
+
+  .p-checkbox .p-checkbox-box{
+    width: 18px;
+    height: 18px;
   }
 
   #form_button {
@@ -61,20 +92,30 @@ body {
     font-size: 15px;
   }
 }
-@media screen and (max-width: 1246px) and (min-width: 707px) {
+@media screen and (max-width: 1247px) and (min-width: 707px) {
 
+  .checkbox-label{
+    font-size: 18px;
+  }
 
-  .string, #back label{
+  .block {
+    width: 310px;
+    height: 190px;
+  }
+
+  .p-checkbox .p-checkbox-box{
+    width: 30px;
+    height: 30px;
+  }
+
+  .string, #back label, #resultTable th{
     font-size: 18px;
   }
 
   .main {
     display: grid;
-    margin-top: 5px;
-    grid-template-rows: 450px 520px 1fr;
+    grid-template-rows: 450px 1fr 1fr;
     grid-template-columns: 1fr;
-    width: 1000px;
-    justify-items: center;
     grid-template-areas:
             "n"
             "c"
@@ -118,19 +159,30 @@ body {
 
 
 }
-@media screen and (max-width: 706px) {
+@media screen and (max-width: 707px) {
 
-  .string, #back label{
+  .block {
+    width: 310px;
+    height: 240px;
+  }
+
+  .string, #back label, #resultTable th{
     font-size: 22px;
+  }
+
+  .checkbox-label{
+    font-size: 20px;
+  }
+
+  .p-checkbox .p-checkbox-box{
+    width: 45px;
+    height: 45px;
   }
 
   .main {
     display: grid;
-    margin-top: 5px;
-    grid-template-rows: 450px 520px 1fr;
+    grid-template-rows: 450px 1fr 1fr;
     grid-template-columns: 1fr;
-    width: 500px;
-    justify-items: center;
     grid-template-areas:
             "n"
             "c"
@@ -156,7 +208,8 @@ body {
 
 
   #top_header{
-    margin: 10px auto;
+    margin: auto;
+    grid-area: h;
   }
 
   .canvas{
@@ -189,20 +242,12 @@ body {
 
 #head {
   text-align: center;
-  grid-area: h;
   margin: 15px auto;
 }
 
 #head p {
   font-size: 13px;
   font-style: italic;
-}
-
-#root {
-  overflow: hidden;
-  width: 1000px;
-  margin: auto;
-  background-color: #fff9e0;
 }
 
 svg {
@@ -241,8 +286,6 @@ svg {
 }
 
 .block {
-  width: 300px;
-  height: 140px;
   padding: 8px;
   background-color: #ffdaba;
   border: 3px dotted #ffffff;
@@ -263,7 +306,8 @@ td {
 
 #resultTable {
   border-collapse: separate;
-  width: 960px;
+  width: 550px;
+  margin: 10px auto;
 }
 
 #resultTable th {
@@ -272,7 +316,7 @@ td {
 }
 
 #resultTable * {
-  padding: 25px;
+  padding: 15px;
 }
 
 .input {
@@ -397,7 +441,7 @@ td {
 
 .error {
   color: #bb2a2a;
-  padding: 10px;
+  margin: 10px auto;
 }
 
 

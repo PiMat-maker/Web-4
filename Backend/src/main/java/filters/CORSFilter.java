@@ -17,11 +17,12 @@ public class CORSFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
+        System.out.println("Start CORS");
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         ((HttpServletResponse) servletResponse).addHeader("Access-Control-Allow-Origin", "*");
-        ((HttpServletResponse) servletResponse).addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        ((HttpServletResponse) servletResponse).addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, HEAD, OPTIONS");
         ((HttpServletResponse) servletResponse).addHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Access-Control-Request-Method, " +
                 "Access-Control-Request-Headers, Origin, Accept, Content-Type, X-Requested-With, Authorization");
 
@@ -30,6 +31,7 @@ public class CORSFilter implements Filter {
             return;
         }
 
+        System.out.println("CORS");
         filterChain.doFilter(request, servletResponse);
     }
 

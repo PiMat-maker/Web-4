@@ -19,13 +19,18 @@ class Login extends React.Component {
   };
 
   submit = (e) => {
+      this.props.setAnswer("");
     e.preventDefault();
-    if (this.state.username === "" || this.state.password === "") {
-      this.setState({ errorMessage: "Please fill all the fields" });
+    this.setState({
+        errorMessage: ""
+    })
+    if (this.state.username.search(/ /g) !== -1 || this.state.password.search(/ /g) !== -1) {
+      this.setState({ errorMessage: "Please fill all the fields or remove spaces" });
       console.log(this.state.errorMessage);
-      return;
+    } else{
+        this.props.userLoginFetch(this.state);
     }
-    this.props.userLoginFetch(this.state);
+
   };
 
   render() {
@@ -58,7 +63,7 @@ class Login extends React.Component {
 
         <br />
         <br />
-        <label className="error"> {this.state.errorMessage} </label>
+        <label className="error string"> {this.state.errorMessage} </label>
       </form>
     );
   }

@@ -53,8 +53,14 @@ class Form extends React.Component {
     return (
         <div id="form">
           <form>
+            <label className="string" htmlFor="slider">
+              X from -4 to 4
+            </label>
             <FormCheckBoxes variable="X" />
             <Y />
+            <label className="string" htmlFor="slider">
+              R from -4 to 4
+            </label>
             <FormCheckBoxes variable="R" />
           </form>
           <input
@@ -65,7 +71,7 @@ class Form extends React.Component {
           />
           <br />
 
-          <label className="error"> {this.props.form.answer} </label>
+          <label className="error string"> {this.props.form.answer} </label>
         </div>
     );
   }

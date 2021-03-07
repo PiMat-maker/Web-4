@@ -22,7 +22,7 @@ export default function Main() {
             <div className="canvas">
                 <Canvas />
                 <div id="back">
-                    <label htmlFor={"logout"}>user: {localStorage.getItem("username")}  </label>
+                    <label className="string" htmlFor={"logout"}>user: {localStorage.getItem("username")}  </label>
                     <button id = "logout" className="mainButton" onClick={click}> Logout </button>
                 </div>
             </div>

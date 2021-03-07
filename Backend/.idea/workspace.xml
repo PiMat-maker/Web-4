@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Lab4a:war exploded" />
+      <artifact name="Lab4a:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -86,11 +86,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -105,8 +109,12 @@
     <configuration name="JBoss 22.0.0.Alpha1" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 22.0.0.Alpha1" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:16161/Lab4a_war_exploded" />
       <option name="COMMON_VM_ARGUMENTS" value=" -Djboss.socket.binding.port-offset=8081" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
         <artifact name="Lab4a:war exploded">
+          <settings />
+        </artifact>
+        <artifact name="Lab4a:war">
           <settings />
         </artifact>
       </deployment>
@@ -171,6 +179,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Lab4a:war exploded" />
+          <artifact name="Lab4a:war" />
         </option>
       </method>
     </configuration>
@@ -184,11 +193,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -230,7 +234,12 @@
       <workItem from="1614317876431" duration="5254000" />
       <workItem from="1614431440021" duration="1279000" />
       <workItem from="1614518587118" duration="2782000" />
-      <workItem from="1614528156659" duration="3708000" />
+      <workItem from="1614528156659" duration="4530000" />
+      <workItem from="1614764480163" duration="8594000" />
+      <workItem from="1614879673948" duration="3423000" />
+      <workItem from="1614959096101" duration="1237000" />
+      <workItem from="1614965013550" duration="5783000" />
+      <workItem from="1615021210525" duration="4760000" />
     </task>
     <servers />
   </component>
@@ -246,58 +255,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1611352498643" />
-    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614528207955">
+    <state x="22" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614800851781">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1614528207955" />
+    <state x="22" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1614800851781" />
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1611605247394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1611605247394" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1611412154933">
+    <state x="400" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1614880082555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611412154933" />
-    <state width="1024" height="207" key="GridCell.Tab.0.bottom" timestamp="1614534317300">
+    <state x="400" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1614880082555" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1614879868352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
-    <state width="1024" height="207" key="GridCell.Tab.0.center" timestamp="1614534317300">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614879868352" />
+    <state width="1024" height="207" key="GridCell.Tab.0.bottom" timestamp="1614965016759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
-    <state width="1024" height="207" key="GridCell.Tab.0.left" timestamp="1614534317300">
+    <state width="1024" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614965016759" />
+    <state width="1024" height="207" key="GridCell.Tab.0.center" timestamp="1614965016759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
-    <state width="1024" height="207" key="GridCell.Tab.0.right" timestamp="1614534317300">
+    <state width="1024" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614965016759" />
+    <state width="1024" height="207" key="GridCell.Tab.0.left" timestamp="1614965016759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614534317300" />
-    <state width="1024" height="210" key="GridCell.Tab.1.bottom" timestamp="1611607559562">
+    <state width="1024" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614965016759" />
+    <state width="1024" height="207" key="GridCell.Tab.0.right" timestamp="1614965016759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611607559562" />
-    <state width="1024" height="210" key="GridCell.Tab.1.center" timestamp="1611607559562">
+    <state width="1024" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614965016759" />
+    <state width="1024" height="207" key="GridCell.Tab.1.bottom" timestamp="1614788428021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611607559562" />
-    <state width="1024" height="210" key="GridCell.Tab.1.left" timestamp="1611607559562">
+    <state width="1024" height="207" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614788428021" />
+    <state width="1024" height="207" key="GridCell.Tab.1.center" timestamp="1614788428021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611607559562" />
-    <state width="1024" height="210" key="GridCell.Tab.1.right" timestamp="1611607559562">
+    <state width="1024" height="207" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1614788428021" />
+    <state width="1024" height="207" key="GridCell.Tab.1.left" timestamp="1614788428021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611607559562" />
+    <state width="1024" height="207" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1614788428021" />
+    <state width="1024" height="207" key="GridCell.Tab.1.right" timestamp="1614788428021">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="207" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1614788428021" />
     <state width="195" height="457" key="HiddenNamespacesPopup" timestamp="1614376427921">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="195" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1614376427921" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1611413971159">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1614880036114">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611413971159" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1614880036114" />
     <state x="664" y="302" width="322" height="236" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1611605449326">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -314,10 +327,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="635" y="304" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1536.824@0.0.1536.824" timestamp="1612979482538" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1614518587730">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1615021210730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1614518587730" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1615021210730" />
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1614880000692">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1614880000692" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1611526796515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

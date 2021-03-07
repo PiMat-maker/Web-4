@@ -9,16 +9,21 @@ class Canvas extends React.Component {
 
     constructor(props) {
         super(props);
-        this.canvas = null;
+        this.state = {
+            canvas : null
+        };
 
         this.setCanvasRef = element => {
-            this.canvas = element;
+            this.setState({
+                canvas : element
+            })
         }
     }
 
     clicked = (ev) => {
         console.log("Click on canvas");
-        let br = this.canvas.current.getBoundingClientRect();
+        this.props.setAnswer("");
+        let br = this.state.canvas.getBoundingClientRect();
         let left = br.left;
         let top = br.top;
         let x = ev.clientX - left;
@@ -58,9 +63,9 @@ class Canvas extends React.Component {
         //make FormData and send it
         const formData = new FormData();
         for (let i = 0; i < this.props.r.length; ++i) {
-            formData.append(`x[${i}]`, xCalculated * this.props.r[i]);
-            formData.append(`y[${i}]`, yCalculated * this.props.r[i]);
-            formData.append(`r[${i}]`, this.props.r[i]);
+            formData.append(`x[${i}]`, (xCalculated * this.props.r[i]).toFixed(4));
+            formData.append(`y[${i}]`, (yCalculated * this.props.r[i]).toFixed(4));
+            formData.append(`r[${i}]`, this.props.r[i].toFixed(4));
         }
 
         this.props.FormPostFetch(formData);

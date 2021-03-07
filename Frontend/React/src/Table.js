@@ -21,11 +21,11 @@ export default function Table() {
         <table id="resultTable">
             <thead>
             <tr>
-                <th>Координата X</th>
-                <th>Координата Y</th>
-                <th>Радиус</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
                 <th>Результат</th>
-                <th>Время работы скрипта</th>
+                <th>Время работы</th>
                 <th>Текущее время</th>
             </tr>
             </thead>

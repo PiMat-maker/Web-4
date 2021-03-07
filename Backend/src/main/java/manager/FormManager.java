@@ -39,17 +39,23 @@ public class FormManager {
                 throw new NotAuthorizedException("Unauthorized");
 
             for (int i = 0; i < params.size() / 3; ++i) {
+                System.out.println("Start");
                 double x = params.get("x[" + i + "]");
                 double y = params.get("y[" + i + "]");
                 double r = params.get("r[" + i + "]");
+                System.out.println("I");
 
-                x = Double.parseDouble(String.format("%.4f", x));
-                y = Double.parseDouble(String.format("%.4f", y));
+                //x = Double.parseDouble(String.format("%.4f", x));
+                //y = Double.parseDouble(String.format("%.4f", y));
+                System.out.println("Parse");
 
                 dataBase.addPoint(x, y, r, username);
+                System.out.println("Add");
             }
+            System.out.println("fin");
             res = dataBase.getList(username);
         } catch (NotAuthorizedException e){
+                System.out.println("Trouble");
                 return Response.status(Response.Status.UNAUTHORIZED).build();
         } catch (Exception e){
             return Response.status(Response.Status.BAD_REQUEST).build();

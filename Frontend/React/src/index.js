@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={'~s289240/build'}>
     <Provider store={store}>
         <div id="top_header">
             <section className="gif">
