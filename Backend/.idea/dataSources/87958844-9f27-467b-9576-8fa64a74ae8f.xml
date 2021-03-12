@@ -14,11 +14,11 @@
       <Relations>sequence|table|16405|16407|1
 sequence|table|16417|16419|1
 sequence|table|16443|16445|1
+sequence|table|16531|16533|1
+sequence|table|16577|16579|1
 sequence|table|16469|16471|1
 sequence|table|16499|16501|1
 sequence|table|16514|16516|1
-sequence|table|16531|16533|1
-sequence|table|16577|16579|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
