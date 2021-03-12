@@ -2,7 +2,7 @@ import {setAnswer, setTable} from "../reducers/formReducer";
 import axios from "axios";
 import {serverError} from "../error";
 
-export const FormPostFetch = (formData) => {
+export const FormPostFetch = (arrays) => {
 
   return (dispatch) => {
     return axios(
@@ -12,10 +12,10 @@ export const FormPostFetch = (formData) => {
       {
         method: "POST",
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/x-www-form-urlencoded",
           Authorization: `Bearer,${localStorage.getItem("token")}`
         },
-        data: formData
+        data: "x=" + encodeURI(arrays.x) + "&y=" + encodeURI(arrays.y) + "&r=" + encodeURI(arrays.r)
       }
     ).then((resp) => {
         if (resp) {

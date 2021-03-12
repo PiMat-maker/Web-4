@@ -32,7 +32,6 @@ public class UserFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         try {
-            System.out.println("Au");
             String authorization = request.getHeader("Authorization");
             String[] authValues = null;
             String token = null;
@@ -40,24 +39,18 @@ public class UserFilter implements Filter {
                 authValues = authorization.split(",");
                 token = authValues[1];
             }
-            System.out.println("Thor");
             String[] path = request.getPathInfo().split("/");
             String username = path[path.length - 1];
 
             user = dataBase.getProfile(username);
             String realToken = user.getToken().trim();
-            //System.out.println(realToken);
-            //System.out.println(token.trim());
 
             if (token != null && !Objects.equals(realToken, token.trim())) {
-                System.out.println("iza");
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             } else {
-                System.out.println("UserFilter");
                 filterChain.doFilter(request, response);
             }
         } catch (NullPointerException e){
-            System.out.println("tion");
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
         }
     }

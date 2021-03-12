@@ -60,15 +60,22 @@ class Canvas extends React.Component {
 
         console.log("Send request");
 
-        //make FormData and send it
-        const formData = new FormData();
+        //make arrays and send it
+        let xs = [];
+        let ys = [];
+        let rs = [];
         for (let i = 0; i < this.props.r.length; ++i) {
-            formData.append(`x[${i}]`, (xCalculated * this.props.r[i]).toFixed(4));
-            formData.append(`y[${i}]`, (yCalculated * this.props.r[i]).toFixed(4));
-            formData.append(`r[${i}]`, this.props.r[i].toFixed(4));
+            xs[i] = (xCalculated * this.props.r[i]).toFixed(4);
+            ys[i] = (yCalculated * this.props.r[i]).toFixed(4);
+            rs[i] = this.props.r[i].toFixed(4);
+        }
+        let arrays ={
+            x: xs,
+            y: ys,
+            r: rs
         }
 
-        this.props.FormPostFetch(formData);
+        this.props.FormPostFetch(arrays);
         const hit = this.checkArea(xCalculated,yCalculated);
         this.drawPoint(xCalculated,yCalculated, 1, hit)
     };

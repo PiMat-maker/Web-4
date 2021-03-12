@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 
 class Form extends React.Component {
   submit = (e) => {
+    this.props.setAnswer("");
     //check R chosen
     if (this.props.form.r.length === 0) {
       this.props.setAnswer("R not chosen");
@@ -36,17 +37,24 @@ class Form extends React.Component {
 
     console.log("Send request");
 
-    //make FormData and send it
-    const formData = new FormData();
+    //make arrays and send it
+    let x = [];
+    let y = [];
+    let r = [];
     for (let i = 0; i < this.props.form.x.length; ++i) {
       for (let j = 0; j < this.props.form.r.length; ++j) {
         const index = i * this.props.form.r.length + j;
-        formData.append(`x[${index}]`, this.props.form.x[i]);
-        formData.append(`y[${index}]`, this.props.form.y);
-        formData.append(`r[${index}]`, this.props.form.r[j]);
+        x[index] = this.props.form.x[i];
+        y[index] = this.props.form.y;
+        r[index] = this.props.form.r[j];
       }
     }
-    this.props.FormPostFetch(formData);
+    let arrays = {
+      x : x,
+      y : y,
+      r : r
+    };
+    this.props.FormPostFetch(arrays);
   };
 
   render() {

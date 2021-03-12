@@ -17,7 +17,6 @@ public class CORSFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-        System.out.println("Start CORS");
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
@@ -31,7 +30,6 @@ public class CORSFilter implements Filter {
             return;
         }
 
-        System.out.println("CORS");
         filterChain.doFilter(request, servletResponse);
     }
 
