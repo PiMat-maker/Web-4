@@ -7,6 +7,7 @@ import main.java.security.Token;
 
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
@@ -69,7 +70,7 @@ public class UserManager {
                 return Response.status(Response.Status.UNAUTHORIZED).build();
             }
             String token = Token.generateToken(user.getToken());
-            user.setToken(token);
+            dataBase.saveToken(user, token);
         } catch (Exception e){
             return Response.status(Response.Status.BAD_REQUEST).build();
         }

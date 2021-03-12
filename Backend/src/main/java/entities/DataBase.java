@@ -1,6 +1,5 @@
 package main.java.entities;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.persistence.*;
 import java.io.Serializable;
@@ -48,6 +47,11 @@ public class DataBase implements Serializable {
     public void setUser(String username, String password, String token) {
         User user = new User(username, password, token);
         entityManager.persist(user);
+    }
+
+    public void saveToken(User user, String token){
+        user.setToken(token);
+        entityManager.merge(user);
     }
 
     public User getProfile(String username){

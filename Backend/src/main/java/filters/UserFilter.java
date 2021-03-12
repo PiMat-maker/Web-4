@@ -44,6 +44,7 @@ public class UserFilter implements Filter {
 
             user = dataBase.getProfile(username);
             String realToken = user.getToken().trim();
+            request.setAttribute("username", user.getUsername());
 
             if (token != null && !Objects.equals(realToken, token.trim())) {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);

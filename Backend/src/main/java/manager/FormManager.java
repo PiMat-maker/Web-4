@@ -12,8 +12,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import java.util.Map;
-import com.sun.jersey.multipart.FormDataParam;
 
 @Singleton
 @Path("/points/{username}")
@@ -23,22 +21,13 @@ public class FormManager {
     private DataBase dataBase;
 
     @POST
-    //@Consumes("multipart/form-data")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public Response addPoint(@PathParam("username") String username, @Context HttpServletRequest request, @Context HttpServletResponse response, @FormParam("x") String xs, @FormParam("y") String ys, @FormParam("r") String rs) {
-        
-        String token = null;
-        String authorization = request.getHeader("Authorization");
-        String[] authValues = null;
-
-        if (authorization != null && authorization.toLowerCase().startsWith("bearer")) {
-            authValues = authorization.split(",");
-            token = authValues[1].trim();
-        }
 
         List<FormBean> res = null;
         try {
-            if (token == null || !token.equals(dataBase.getProfile(username).getToken().trim()))
+            String realUser = (String) request.getAttribute("username");
+            if (realUser == null || !realUser.trim().equals(username))
                 throw new NotAuthorizedException("Unauthorized");
 
             String[] xlist = xs.split(",");
