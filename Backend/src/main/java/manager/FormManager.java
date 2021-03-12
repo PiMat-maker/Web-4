@@ -22,7 +22,7 @@ public class FormManager {
 
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Response addPoint(@PathParam("username") String username, @Context HttpServletRequest request, @Context HttpServletResponse response, @FormParam("x") String xs, @FormParam("y") String ys, @FormParam("r") String rs) {
+    public Response addPoint(@PathParam("username") String username, @Context HttpServletRequest request, @Context HttpServletResponse response, @FormParam("x[]") List<Double> xs, @FormParam("y[]") List<Double> ys, @FormParam("r[]") List<Double> rs) {
 
         List<FormBean> res = null;
         try {
@@ -30,14 +30,10 @@ public class FormManager {
             if (realUser == null || !realUser.trim().equals(username))
                 throw new NotAuthorizedException("Unauthorized");
 
-            String[] xlist = xs.split(",");
-            String[] ylist = ys.split(",");
-            String[] rlist = rs.split(",");
-
-            for (int i = 0; i < xlist.length; ++i) {
-                double x = Double.parseDouble(xlist[i]);
-                double y = Double.parseDouble(ylist[i]);
-                double r = Double.parseDouble(rlist[i]);
+            for (int i = 0; i < xs.size(); ++i) {
+                double x = xs.get(i);
+                double y = ys.get(i);
+                double r = rs.get(i);
 
                 dataBase.addPoint(x, y, r, username);
             }

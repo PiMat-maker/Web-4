@@ -54,6 +54,7 @@ class Form extends React.Component {
       y : y,
       r : r
     };
+    
     this.props.FormPostFetch(arrays);
   };
 
